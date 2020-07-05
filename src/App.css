@@ -9,12 +9,17 @@
 .gif {
   position: absolute;
   top: 10%;
-  left: 7%;
+  left: 2%;
   max-width: 65%;
-  max-height: 65%;
+  max-height: 46vh;
 }
 
+.h1 {
+  cursor: pointer;
+}
 .homeText {
+  cursor: pointer;
+  border: none;
   position: absolute;
   color: white;
   font-family: "Roboto", serif;
@@ -23,6 +28,9 @@
 }
 
 .aboutText {
+  cursor: pointer;
+  border: none;
+  background-color: black;
   position: absolute;
   color: white;
   font-family: "Roboto", serif;
@@ -31,6 +39,9 @@
 }
 
 .projectsText {
+  cursor: pointer;
+  border: none;
+  background-color: black;
   position: absolute;
   color: white;
   font-family: "Roboto", serif;
@@ -39,6 +50,9 @@
 }
 
 .contactText {
+  cursor: pointer;
+  border: none;
+  background-color: black;
   position: absolute;
   color: white;
   font-family: "Roboto", serif;
@@ -47,10 +61,17 @@
 }
 
 .nameText {
-  background-color: white;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+  background-clip: border-box;
+  cursor: pointer;
   position: absolute;
-  padding-left: 3%;
   font-family: "Roboto", serif;
   font-size: 10vw;
-  width: 65%;
+  width: 100%;
 }
