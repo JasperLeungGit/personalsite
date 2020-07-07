@@ -70,7 +70,7 @@ const App = () => {
       <animated.div style={nameAnimation} id="main">
         <h1
           className="nameText"
-          title="Click Me! :) :) :)"
+          title="Click Me! :)"
           onClick={() => {
             colorNum += 1;
             if (colorNum === 1) {
@@ -194,6 +194,39 @@ const App = () => {
     );
   };
 
+  const displayAbout = () => {
+    return (
+      <div>
+        <h1 id="aboutHeader" className="aboutHeader">
+          About Me
+        </h1>
+        <p className="aboutMe">
+          I am a 3rd year Software Engineering student at McMaster University,
+          with an interest in full stack development.
+        </p>
+        <h1 id="skillsHeader" className="skillsHeader">
+          Technical Skills
+        </h1>
+        <p className="skills">
+          Languages: Javascript, CSS, HTML, ECMAScript, SQL, Java, C, Python,
+          C#, Bash, Arduino, NASM assembly language, MATLAB
+        </p>
+        <p className="skills2">
+          Technologies: Git, React, RESTful web services, SQL, Bootstrap,
+          Firebase, Heroku, Android Studio, Ubuntu, Linux, Photoshop
+        </p>
+        <h1 className="educationHeader">Education</h1>
+        <p className="education">
+          McMaster University – Software Engineering CO-OP – B.Eng. (2018-2023)
+        </p>
+        <h1 className="hobbiesHeader">Hobbies</h1>
+        <p className="hobbies">
+          Working on side projects, reading, gaming, making music
+        </p>
+      </div>
+    );
+  };
+
   const display = () => {
     var href = window.location.href.substring(
       window.location.href.lastIndexOf("/") + 1
@@ -203,6 +236,13 @@ const App = () => {
         <div>
           {displayGif()}
           {displayName()}
+          {displayMenu()}
+        </div>
+      );
+    } else if (href === "about") {
+      return (
+        <div>
+          {displayAbout()}
           {displayMenu()}
         </div>
       );

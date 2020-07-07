@@ -60,6 +60,99 @@
   left: 48%;
 }
 
+.aboutHeader {
+  border: none;
+  background-color: white;
+  position: absolute;
+  color: black;
+  padding: 0.5%;
+  font-family: "Roboto", serif;
+  font-size: 2vw;
+  left: 3%;
+  top: 3%;
+}
+
+.aboutMe {
+  background-color: black;
+  position: absolute;
+  color: white;
+  left: 3%;
+  top: 10%;
+  width: 60%;
+}
+
+.skillsHeader {
+  border: none;
+  background-color: white;
+  position: absolute;
+  color: black;
+  padding: 0.5%;
+  font-family: "Roboto", serif;
+  font-size: 2vw;
+  left: 3%;
+  top: 33%;
+}
+
+.skills {
+  background-color: black;
+  position: absolute;
+  color: white;
+  left: 3%;
+  top: 40%;
+  width: 60%;
+}
+
+.skills2 {
+  background-color: black;
+  position: absolute;
+  color: white;
+  left: 3%;
+  top: 43%;
+  width: 60%;
+}
+
+.educationHeader {
+  border: none;
+  background-color: white;
+  position: absolute;
+  color: black;
+  padding: 0.5%;
+  font-family: "Roboto", serif;
+  font-size: 2vw;
+  left: 3%;
+  top: 18%;
+}
+
+.education {
+  background-color: black;
+  position: absolute;
+  color: white;
+  left: 3%;
+  top: 25%;
+  width: 60%;
+}
+
+.hobbiesHeader {
+  border: none;
+  background-color: white;
+  position: absolute;
+  color: black;
+  padding: 0.5%;
+  font-family: "Roboto", serif;
+  font-size: 2vw;
+  left: 3%;
+  top: 51%;
+}
+
+.hobbies {
+  background-color: black;
+  position: absolute;
+  color: white;
+  left: 3%;
+  top: 58%;
+  width: 60%;
+}
+
 .nameText {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
