@@ -1,6 +1,6 @@
 import "./App.css";
 import { useSpring, animated, config } from "react-spring";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Helmet } from "react-helmet";
 
 const App = () => {
@@ -22,18 +22,34 @@ const App = () => {
     color: "#000",
     backgroundColor: "#fff",
     paddingLeft: "3%",
-    paddingRight: "36.5%",
+    paddingRight: "11%",
     paddingBottom: "1%",
   }));
 
+  const [isToggled, setToggle] = useState(false);
+  const [isToggled2, setToggle2] = useState(false);
+  const [isToggled3, setToggle3] = useState(false);
+  const [isToggled4, setToggle4] = useState(false);
+
+  const expand = useSpring({
+    fontSize: isToggled ? "3vw" : "2vw",
+  });
+  const expand2 = useSpring({
+    fontSize: isToggled2 ? "3vw" : "2vw",
+  });
+  const expand3 = useSpring({
+    fontSize: isToggled3 ? "3vw" : "2vw",
+  });
+  const expand4 = useSpring({
+    fontSize: isToggled4 ? "3vw" : "2vw",
+  });
+
   const hover = (id) => {
-    console.log("hover");
     document.getElementById(id).style.color = "#000";
     document.getElementById(id).style.background = "#fff";
   };
 
   const leave = (id) => {
-    console.log("leave");
     document.getElementById(id).style.color = "#fff";
     document.getElementById(id).style.background = "#000";
   };
@@ -54,7 +70,6 @@ const App = () => {
       <animated.div style={nameAnimation} id="main">
         <h1
           className="nameText"
-          onselectstart="return false"
           title="Click Me! :) :) :)"
           onClick={() => {
             colorNum += 1;
@@ -106,40 +121,94 @@ const App = () => {
   const displayMenu = () => {
     return (
       <animated.div style={menuAnimation} id="menu">
-        <h1
-          className="homeText"
-          id="home"
-          onMouseEnter={() => hover("home")}
-          onMouseLeave={() => leave("home")}
-        >
-          Home
-        </h1>
-        <h1
-          className="aboutText"
-          id="about"
-          onMouseEnter={() => hover("about")}
-          onMouseLeave={() => leave("about")}
-        >
-          About
-        </h1>
-        <h1
-          className="projectsText"
-          id="projects"
-          onMouseEnter={() => hover("projects")}
-          onMouseLeave={() => leave("projects")}
-        >
-          Projects
-        </h1>
-        <h1
-          className="contactText"
-          id="contact"
-          onMouseEnter={() => hover("contact")}
-          onMouseLeave={() => leave("contact")}
-        >
-          Contact
-        </h1>
+        <a href="home">
+          <animated.h1
+            className="homeText"
+            id="home"
+            style={expand}
+            href="Home"
+            onMouseEnter={() => {
+              setToggle(!isToggled);
+              hover("home");
+            }}
+            onMouseLeave={() => {
+              setToggle(!isToggled);
+              leave("home");
+            }}
+          >
+            Home
+          </animated.h1>
+        </a>
+        <a href="about">
+          <animated.h1
+            className="aboutText"
+            id="about"
+            style={expand2}
+            onMouseEnter={() => {
+              setToggle2(!isToggled2);
+              hover("about");
+            }}
+            onMouseLeave={() => {
+              setToggle2(!isToggled2);
+              leave("about");
+            }}
+          >
+            About
+          </animated.h1>
+        </a>
+        <a href="projects">
+          <animated.h1
+            className="projectsText"
+            id="projects"
+            style={expand3}
+            onMouseEnter={() => {
+              setToggle3(!isToggled3);
+              hover("projects");
+            }}
+            onMouseLeave={() => {
+              setToggle3(!isToggled3);
+              leave("projects");
+            }}
+          >
+            Projects
+          </animated.h1>
+        </a>
+        <a href="contact">
+          <animated.h1
+            className="contactText"
+            id="Contact"
+            style={expand4}
+            onMouseEnter={() => {
+              setToggle4(!isToggled4);
+              hover("Contact");
+            }}
+            onMouseLeave={() => {
+              setToggle4(!isToggled4);
+              leave("Contact");
+            }}
+          >
+            Contact
+          </animated.h1>
+        </a>
       </animated.div>
     );
+  };
+
+  const display = () => {
+    var href = window.location.href.substring(
+      window.location.href.lastIndexOf("/") + 1
+    );
+    if (href === "" || href === "home") {
+      return (
+        <div>
+          {displayGif()}
+          {displayName()}
+          {displayMenu()}
+        </div>
+      );
+    } else {
+      return <div></div>;
+    }
   };
 
   return (
@@ -151,9 +220,7 @@ const App = () => {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto"
       ></link>
-      {displayGif()}
-      {displayName()}
-      {displayMenu()}
+      {display()}
     </div>
   );
 };
