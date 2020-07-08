@@ -79,6 +79,7 @@
   left: 3%;
   top: 10%;
   width: 70%;
+  font-family: "Roboto", serif;
 }
 
 .skillsHeader {
@@ -100,6 +101,7 @@
   left: 3%;
   top: 40%;
   width: 70%;
+  font-family: "Roboto", serif;
 }
 
 .educationHeader {
@@ -121,6 +123,7 @@
   left: 3%;
   top: 25%;
   width: 70%;
+  font-family: "Roboto", serif;
 }
 
 .hobbiesHeader {
@@ -132,7 +135,7 @@
   font-family: "Roboto", serif;
   font-size: 2vw;
   left: 3%;
-  top: 48%;
+  top: 53%;
 }
 
 .hobbies {
@@ -140,8 +143,9 @@
   position: absolute;
   color: white;
   left: 3%;
-  top: 55%;
+  top: 59%;
   width: 70%;
+  font-family: "Roboto", serif;
 }
 
 .gitIcon {
@@ -156,6 +160,7 @@
   color: white;
   top: 10%;
   left: 13%;
+  font-family: "Roboto", serif;
 }
 
 .linkedinIcon {
@@ -170,6 +175,7 @@
   color: white;
   top: 35%;
   left: 13%;
+  font-family: "Roboto", serif;
 }
 
 .mailIcon {
@@ -184,6 +190,7 @@
   color: white;
   top: 60%;
   left: 13%;
+  font-family: "Roboto", serif;
 }
 
 .nameText {

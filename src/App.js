@@ -206,25 +206,29 @@ const App = () => {
           About Me
         </h1>
         <p className="aboutMe">
-          I am a 3rd year Software Engineering student studying at McMaster
-          University, with an interest in full stack development.
+          <br></br>I am a 3rd year Software Engineering student studying at
+          McMaster University, with an interest in full stack development.
         </p>
         <h1 id="skillsHeader" className="skillsHeader">
           Technical Skills
         </h1>
         <p className="skills">
+          <br></br>
           Languages: Javascript, CSS, HTML, ECMAScript, Node.js, SQL, Java, C,
           Python, C#, Bash, Arduino, NASM assembly language
+          <br></br>
           <br></br>
           Technologies: Git, React, RESTful web services, SQL, Bootstrap,
           Firebase, Heroku, Android Studio, Ubuntu, Linux, Photoshop
         </p>
         <h1 className="educationHeader">Education</h1>
         <p className="education">
+          <br></br>
           McMaster University – Software Engineering CO-OP – B.Eng. (2018-2023)
         </p>
         <h1 className="hobbiesHeader">Hobbies</h1>
         <p className="hobbies">
+          <br></br>
           Working on side projects, reading, playing video games, making music
         </p>
       </animated.div>
