@@ -15,6 +15,11 @@ const App = () => {
     to: { opacity: 1, transform: "translate3d(0%,85vh,0)" },
   });
 
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+  });
+
   const [
     { color, backgroundColor, paddingLeft, paddingRight, paddingBottom },
     set,
@@ -196,22 +201,21 @@ const App = () => {
 
   const displayAbout = () => {
     return (
-      <div>
+      <animated.div style={fadeIn}>
         <h1 id="aboutHeader" className="aboutHeader">
           About Me
         </h1>
         <p className="aboutMe">
-          I am a 3rd year Software Engineering student at McMaster University,
-          with an interest in full stack development.
+          I am a 3rd year Software Engineering student studying at McMaster
+          University, with an interest in full stack development.
         </p>
         <h1 id="skillsHeader" className="skillsHeader">
           Technical Skills
         </h1>
         <p className="skills">
-          Languages: Javascript, CSS, HTML, ECMAScript, SQL, Java, C, Python,
-          C#, Bash, Arduino, NASM assembly language, MATLAB
-        </p>
-        <p className="skills2">
+          Languages: Javascript, CSS, HTML, ECMAScript, Node.js, SQL, Java, C,
+          Python, C#, Bash, Arduino, NASM assembly language
+          <br></br>
           Technologies: Git, React, RESTful web services, SQL, Bootstrap,
           Firebase, Heroku, Android Studio, Ubuntu, Linux, Photoshop
         </p>
@@ -221,9 +225,44 @@ const App = () => {
         </p>
         <h1 className="hobbiesHeader">Hobbies</h1>
         <p className="hobbies">
-          Working on side projects, reading, gaming, making music
+          Working on side projects, reading, playing video games, making music
         </p>
-      </div>
+      </animated.div>
+    );
+  };
+
+  const displayContact = () => {
+    console.log("contact");
+    return (
+      <animated.div style={fadeIn}>
+        <a
+          href="https://github.com/JasperLeungGit"
+          title="Click here to visit my GitHub profile"
+        >
+          <img
+            className="gitIcon"
+            src="https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/github-512.png"
+          />
+          <p className="gitLink">GitHub: https://github.com/JasperLeungGit</p>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/jasper-leung-9244b4170/"
+          title="Click here to visit my LinkedIn profile"
+        >
+          <img
+            className="linkedinIcon"
+            src="https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/linkedin-512.png"
+          />
+          <p className="linkedinLink">
+            LinkedIn: https://www.linkedin.com/in/jasper-leung-9244b4170/
+          </p>
+        </a>
+        <img
+          className="mailIcon"
+          src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/email-512.png"
+        />
+        <p className="mailLink">Email: jasper.leung123@gmail.com</p>
+      </animated.div>
     );
   };
 
@@ -246,8 +285,21 @@ const App = () => {
           {displayMenu()}
         </div>
       );
+    } else if (href === "contact") {
+      return (
+        <div>
+          {displayContact()}
+          {displayMenu()}
+        </div>
+      );
     } else {
-      return <div></div>;
+      return (
+        <div>
+          {displayGif()}
+          {displayName()}
+          {displayMenu()}
+        </div>
+      );
     }
   };
 

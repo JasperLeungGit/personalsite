@@ -78,7 +78,7 @@
   color: white;
   left: 3%;
   top: 10%;
-  width: 60%;
+  width: 70%;
 }
 
 .skillsHeader {
@@ -99,16 +99,7 @@
   color: white;
   left: 3%;
   top: 40%;
-  width: 60%;
-}
-
-.skills2 {
-  background-color: black;
-  position: absolute;
-  color: white;
-  left: 3%;
-  top: 43%;
-  width: 60%;
+  width: 70%;
 }
 
 .educationHeader {
@@ -129,7 +120,7 @@
   color: white;
   left: 3%;
   top: 25%;
-  width: 60%;
+  width: 70%;
 }
 
 .hobbiesHeader {
@@ -141,7 +132,7 @@
   font-family: "Roboto", serif;
   font-size: 2vw;
   left: 3%;
-  top: 51%;
+  top: 48%;
 }
 
 .hobbies {
@@ -149,8 +140,50 @@
   position: absolute;
   color: white;
   left: 3%;
-  top: 58%;
-  width: 60%;
+  top: 55%;
+  width: 70%;
+}
+
+.gitIcon {
+  position: absolute;
+  height: 15%;
+  top: 5%;
+  left: 3%;
+}
+
+.gitLink {
+  position: absolute;
+  color: white;
+  top: 10%;
+  left: 13%;
+}
+
+.linkedinIcon {
+  position: absolute;
+  height: 15%;
+  top: 30%;
+  left: 3%;
+}
+
+.linkedinLink {
+  position: absolute;
+  color: white;
+  top: 35%;
+  left: 13%;
+}
+
+.mailIcon {
+  position: absolute;
+  height: 15%;
+  top: 55%;
+  left: 3%;
+}
+
+.mailLink {
+  position: absolute;
+  color: white;
+  top: 60%;
+  left: 13%;
 }
 
 .nameText {
