@@ -76,10 +76,7 @@ const App = () => {
   const displayGif = () => {
     return (
       <animated.div id="gif">
-        <img
-          className="gif"
-          src="http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
-        ></img>
+        <img className="gif" src="images/whitehole.gif"></img>
       </animated.div>
     );
   };
@@ -305,10 +302,11 @@ const App = () => {
             <animated.h1
               id="redditWorldCup"
               className="projectListing"
+              title="Click for more info about this project."
               onMouseEnter={() => {
                 hoverProject("redditWorldCup");
                 setDescription(
-                  "A React web app which allows users to compare Reddit image posts in a bracket-style format"
+                  "A React web app which allows users to compare Reddit image posts in a bracket-style format."
                 );
                 setImage(
                   "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
@@ -322,19 +320,106 @@ const App = () => {
             >
               Reddit World Cup
             </animated.h1>
-            <animated.h1 id="personalSite" className="projectListing">
+            <animated.h1
+              id="personalSite"
+              className="projectListing"
+              title="Click for more info about this project."
+              onMouseEnter={() => {
+                hoverProject("personalSite");
+                setDescription(
+                  "My personal site for showcasing my projects. You are using it right now."
+                );
+                setImage(
+                  "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
+                );
+              }}
+              onMouseLeave={() => {
+                leaveProject("personalSite");
+                setDescription("");
+                setImage("");
+              }}
+            >
               Personal Website
             </animated.h1>
-            <animated.h1 id="safeFoods" className="projectListing">
+            <animated.h1
+              id="safeFoods"
+              className="projectListing"
+              title="Click for more info about this project."
+              onMouseEnter={() => {
+                hoverProject("safeFoods");
+                setDescription(
+                  "A Java swing app which lists the health violation and inspection history for LA restaurants. Made in collaboration with Mike Li, Dipendra Subedi, and Sanjula Ganepola."
+                );
+                setImage("images/safefoods.png");
+              }}
+              onMouseLeave={() => {
+                leaveProject("safeFoods");
+                setDescription("");
+                setImage("");
+              }}
+            >
               SafeFoods
             </animated.h1>
-            <animated.h1 id="trafficAlarm" className="projectListing">
-              Traffic Alarm
-            </animated.h1>
-            <animated.h1 id="fibFractals" className="projectListing">
+            <animated.h1
+              id="fibFractals"
+              className="projectListing"
+              title="Click for more info about this project."
+              onMouseEnter={() => {
+                hoverProject("fibFractals");
+                setDescription(
+                  "A C program which generates Fibonacci fractals from an inputted Fibonacci word."
+                );
+                setImage(
+                  "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
+                );
+              }}
+              onMouseLeave={() => {
+                leaveProject("fibFractals");
+                setDescription("");
+                setImage("");
+              }}
+            >
               Fibonacci Word Fractals
             </animated.h1>
-            <animated.h1 id="boonk" className="projectListing">
+            <animated.h1
+              id="trafficAlarm"
+              className="projectListing"
+              title="Click for more info about this project."
+              onMouseEnter={() => {
+                hoverProject("trafficAlarm");
+                setDescription(
+                  "An Android alarm clock app which changes the alarm based on the traffic of the surrounding area. Made in collaboration with Alvin Chan and Anson Wan."
+                );
+                setImage(
+                  "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
+                );
+              }}
+              onMouseLeave={() => {
+                leaveProject("trafficAlarm");
+                setDescription("");
+                setImage("");
+              }}
+            >
+              Traffic Alarm
+            </animated.h1>
+
+            <animated.h1
+              id="boonk"
+              className="projectListing"
+              title="Click for more info about this project."
+              onMouseEnter={() => {
+                hoverProject("boonk");
+                setDescription(
+                  "A Unity fighting game. The best thing I will ever make."
+                );
+                setImage("/videos/boonk.gif");
+              }}
+              onMouseLeave={() => {
+                leaveProject("boonk");
+                setDescription("");
+                setImage("");
+              }}
+            >
               Boonk
             </animated.h1>
           </div>
