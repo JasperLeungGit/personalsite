@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .background {
@@ -23,7 +24,7 @@
   position: absolute;
   color: white;
   font-family: "Roboto", serif;
-  font-size: 2vw;
+  font-size: 3.5vh;
   left: 3%;
 }
 
@@ -34,7 +35,7 @@
   position: absolute;
   color: white;
   font-family: "Roboto", serif;
-  font-size: 2vw;
+  font-size: 3.5vh;
   left: 18%;
 }
 
@@ -45,7 +46,7 @@
   position: absolute;
   color: white;
   font-family: "Roboto", serif;
-  font-size: 2vw;
+  font-size: 3.5vh;
   left: 33%;
 }
 
@@ -56,7 +57,7 @@
   position: absolute;
   color: white;
   font-family: "Roboto", serif;
-  font-size: 2vw;
+  font-size: 3.5vh;
   left: 48%;
 }
 
@@ -67,7 +68,7 @@
   color: black;
   padding: 0.5%;
   font-family: "Roboto", serif;
-  font-size: 2vw;
+  font-size: 3.5vh;
   left: 3%;
   top: 3%;
 }
@@ -80,6 +81,7 @@
   top: 10%;
   width: 70%;
   font-family: "Roboto", serif;
+  font-size: 1.5vh;
 }
 
 .skillsHeader {
@@ -89,7 +91,7 @@
   color: black;
   padding: 0.5%;
   font-family: "Roboto", serif;
-  font-size: 2vw;
+  font-size: 3.5vh;
   left: 3%;
   top: 33%;
 }
@@ -102,6 +104,7 @@
   top: 40%;
   width: 70%;
   font-family: "Roboto", serif;
+  font-size: 1.5vh;
 }
 
 .educationHeader {
@@ -111,7 +114,7 @@
   color: black;
   padding: 0.5%;
   font-family: "Roboto", serif;
-  font-size: 2vw;
+  font-size: 3.5vh;
   left: 3%;
   top: 18%;
 }
@@ -124,6 +127,7 @@
   top: 25%;
   width: 70%;
   font-family: "Roboto", serif;
+  font-size: 1.5vh;
 }
 
 .hobbiesHeader {
@@ -133,7 +137,7 @@
   color: black;
   padding: 0.5%;
   font-family: "Roboto", serif;
-  font-size: 2vw;
+  font-size: 3.5vh;
   left: 3%;
   top: 53%;
 }
@@ -146,51 +150,73 @@
   top: 59%;
   width: 70%;
   font-family: "Roboto", serif;
+  font-size: 1.5vh;
 }
 
 .gitIcon {
   position: absolute;
-  height: 15%;
-  top: 5%;
-  left: 3%;
-}
-
-.gitLink {
-  position: absolute;
-  color: white;
-  top: 10%;
-  left: 13%;
-  font-family: "Roboto", serif;
-}
-
-.linkedinIcon {
-  position: absolute;
-  height: 15%;
+  max-height: 15%;
+  max-width: 15%;
   top: 30%;
   left: 3%;
 }
 
-.linkedinLink {
+.linkedinIcon {
   position: absolute;
-  color: white;
-  top: 35%;
-  left: 13%;
-  font-family: "Roboto", serif;
+  max-height: 15%;
+  max-width: 15%;
+  top: 30%;
+  left: 23%;
 }
 
 .mailIcon {
   position: absolute;
-  height: 15%;
-  top: 55%;
-  left: 3%;
+  max-height: 15%;
+  max-width: 15%;
+  top: 30%;
+  left: 43%;
 }
 
-.mailLink {
+.projectContainer {
+  height: 90vh;
+  width: 40%;
+  position: absolute;
+}
+
+.content {
+  height: 80vh;
+  overflow: auto;
+}
+.projectListing {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  padding: 0.5%;
+  font-family: "Roboto", serif;
+  font-size: 5vh;
+  left: 5%;
+}
+
+.projectPreview {
+  left: 40%;
+  top: 103%;
+}
+
+.projectDescriptionShort {
+  background-color: black;
   position: absolute;
   color: white;
-  top: 60%;
-  left: 13%;
+  left: 50%;
+  top: 10%;
+  width: 30%;
   font-family: "Roboto", serif;
+  font-size: 3vh;
+}
+
+.previewImage {
+  position: absolute;
+  left: 50%;
+  top: 30%;
 }
 
 .nameText {

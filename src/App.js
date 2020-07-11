@@ -20,6 +20,9 @@ const App = () => {
     to: { opacity: 1 },
   });
 
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
+
   const [
     { color, backgroundColor, paddingLeft, paddingRight, paddingBottom },
     set,
@@ -37,16 +40,16 @@ const App = () => {
   const [isToggled4, setToggle4] = useState(false);
 
   const expand = useSpring({
-    fontSize: isToggled ? "3vw" : "2vw",
+    fontSize: isToggled ? "5vh" : "3.5vh",
   });
   const expand2 = useSpring({
-    fontSize: isToggled2 ? "3vw" : "2vw",
+    fontSize: isToggled2 ? "5vh" : "3.5vh",
   });
   const expand3 = useSpring({
-    fontSize: isToggled3 ? "3vw" : "2vw",
+    fontSize: isToggled3 ? "5vh" : "3.5vh",
   });
   const expand4 = useSpring({
-    fontSize: isToggled4 ? "3vw" : "2vw",
+    fontSize: isToggled4 ? "5vh" : "3.5vh",
   });
 
   const hover = (id) => {
@@ -57,6 +60,17 @@ const App = () => {
   const leave = (id) => {
     document.getElementById(id).style.color = "#fff";
     document.getElementById(id).style.background = "#000";
+  };
+
+  const leaveProject = (id) => {
+    document.getElementById(id).style.color = "#000";
+    document.getElementById(id).style.background = "#fff";
+  };
+
+  const hoverProject = (id) => {
+    document.getElementById(id).style.color = "#fff";
+    document.getElementById(id).style.background = "#5ce080";
+    document.getElementById(id).style.border = "#fff";
   };
 
   const displayGif = () => {
@@ -247,7 +261,6 @@ const App = () => {
             className="gitIcon"
             src="https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/github-512.png"
           />
-          <p className="gitLink">GitHub: https://github.com/JasperLeungGit</p>
         </a>
         <a
           href="https://www.linkedin.com/in/jasper-leung-9244b4170/"
@@ -257,15 +270,83 @@ const App = () => {
             className="linkedinIcon"
             src="https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/linkedin-512.png"
           />
-          <p className="linkedinLink">
-            LinkedIn: https://www.linkedin.com/in/jasper-leung-9244b4170/
-          </p>
         </a>
-        <img
-          className="mailIcon"
-          src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/email-512.png"
-        />
-        <p className="mailLink">Email: jasper.leung123@gmail.com</p>
+        <a
+          href="mailto:jasper.leung123@gmail.com"
+          title="Click here to send an email to me"
+        >
+          <img
+            className="mailIcon"
+            src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/email-512.png"
+          />
+        </a>
+      </animated.div>
+    );
+  };
+
+  const displayProjects = () => {
+    console.log("projects");
+    return (
+      <animated.div style={fadeIn}>
+        <animated.div className="projectContainer" style={fadeIn}>
+          <div className="content">
+            <animated.h1
+              id="myAlbumList"
+              className="projectListing"
+              onMouseEnter={() => {
+                hoverProject("myAlbumList");
+              }}
+              onMouseLeave={() => {
+                leaveProject("myAlbumList");
+              }}
+            >
+              MyAlbumList
+            </animated.h1>
+            <animated.h1
+              id="redditWorldCup"
+              className="projectListing"
+              onMouseEnter={() => {
+                hoverProject("redditWorldCup");
+                setDescription(
+                  "A React web app which allows users to compare Reddit image posts in a bracket-style format"
+                );
+                setImage(
+                  "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
+                );
+              }}
+              onMouseLeave={() => {
+                leaveProject("redditWorldCup");
+                setDescription("");
+                setImage("");
+              }}
+            >
+              Reddit World Cup
+            </animated.h1>
+            <animated.h1 id="personalSite" className="projectListing">
+              Personal Website
+            </animated.h1>
+            <animated.h1 id="safeFoods" className="projectListing">
+              SafeFoods
+            </animated.h1>
+            <animated.h1 id="trafficAlarm" className="projectListing">
+              Traffic Alarm
+            </animated.h1>
+            <animated.h1 id="fibFractals" className="projectListing">
+              Fibonacci Word Fractals
+            </animated.h1>
+            <animated.h1 id="boonk" className="projectListing">
+              Boonk
+            </animated.h1>
+          </div>
+        </animated.div>
+        <animated.div
+          id="projectPreview"
+          className="projectPreview"
+          style={fadeIn}
+        >
+          <h1 className="projectDescriptionShort">{description}</h1>
+          <img className="previewImage" src={image}></img>
+        </animated.div>
       </animated.div>
     );
   };
@@ -299,8 +380,7 @@ const App = () => {
     } else {
       return (
         <div>
-          {displayGif()}
-          {displayName()}
+          {displayProjects()}
           {displayMenu()}
         </div>
       );
