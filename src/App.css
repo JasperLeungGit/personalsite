@@ -58,7 +58,7 @@
   color: white;
   font-family: "Roboto", serif;
   font-size: 2vw;
-  left: 67%;
+  left: 69%;
 }
 
 .aboutHeader {
@@ -79,7 +79,7 @@
   color: white;
   left: 3%;
   top: 10%;
-  width: 70%;
+  width: 90%;
   font-family: "Roboto", serif;
   font-size: 1.5vh;
 }
@@ -102,7 +102,7 @@
   color: white;
   left: 3%;
   top: 40%;
-  width: 70%;
+  width: 90%;
   font-family: "Roboto", serif;
   font-size: 1.5vh;
 }
@@ -125,7 +125,7 @@
   color: white;
   left: 3%;
   top: 25%;
-  width: 70%;
+  width: 90%;
   font-family: "Roboto", serif;
   font-size: 1.5vh;
 }
@@ -139,7 +139,7 @@
   font-family: "Roboto", serif;
   font-size: 3.5vh;
   left: 3%;
-  top: 55%;
+  top: 57%;
 }
 
 .hobbies {
@@ -147,8 +147,8 @@
   position: absolute;
   color: white;
   left: 3%;
-  top: 61%;
-  width: 70%;
+  top: 63%;
+  width: 90%;
   font-family: "Roboto", serif;
   font-size: 1.5vh;
 }
@@ -250,7 +250,7 @@
   top: 20%;
   width: 70%;
   font-family: "Raleway", serif;
-  font-size: 2vh;
+  font-size: 1.5vh;
   font-weight: 100;
 }
 

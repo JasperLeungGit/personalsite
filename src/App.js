@@ -82,6 +82,11 @@ const App = () => {
     document.getElementById(id).style.border = "#fff";
   };
 
+  const resetProject = () => {
+    setDescription("");
+    setImage("");
+  };
+
   const displayGif = () => {
     return (
       <animated.div id="gif">
@@ -327,6 +332,7 @@ const App = () => {
                   leaveProject("redditWorldCup");
                 }}
                 onClick={() => {
+                  setImage("/videos/redditworldcup.gif");
                   setTitle("Reddit World Cup");
                   setDetailed(true);
                   setDescription2(
@@ -368,6 +374,7 @@ const App = () => {
                   leaveProject("personalSite");
                 }}
                 onClick={() => {
+                  setImage("/videos/personalsite.gif");
                   setTitle("Personal Site");
                   setDetailed(true);
                   setDescription2(
@@ -408,7 +415,8 @@ const App = () => {
                   leaveProject("safeFoods");
                 }}
                 onClick={() => {
-                  setTitle("Personal Site");
+                  setImage("images/safefoods.png");
+                  setTitle("SafeFoods");
                   setDetailed(true);
                   setDescription2(
                     <div>
@@ -447,7 +455,8 @@ const App = () => {
                   leaveProject("fibFractals");
                 }}
                 onClick={() => {
-                  setTitle("Fibbonaci Word Fractals");
+                  setImage("images/fib25.jpg");
+                  setTitle("Fibbonaci Fractals");
                   setDetailed(true);
                   setDescription2(
                     <div>
@@ -485,6 +494,7 @@ const App = () => {
                   leaveProject("trafficAlarm");
                 }}
                 onClick={() => {
+                  setImage("/images/trafficalarm.png");
                   setTitle("Traffic Alarm");
                   setDetailed(true);
                   setDescription2(
@@ -525,6 +535,7 @@ const App = () => {
                   leaveProject("boonk");
                 }}
                 onClick={() => {
+                  setImage("/videos/boonk.gif");
                   setTitle("Boonk");
                   setDetailed(true);
                   setDescription2(
@@ -579,6 +590,7 @@ const App = () => {
             onClick={() => {
               console.log("clicked");
               setDetailed(false);
+              resetProject();
             }}
           >
             Back to Projects
