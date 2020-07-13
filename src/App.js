@@ -1,3 +1,5 @@
+//I WILL ORGANIZE THIS CODE ONE OF THESE DAYS
+//BUT RIGHT NOW IT WILL REMAIN A BRICK OF CODE :)
 import "./App.css";
 import { useSpring, animated, config } from "react-spring";
 import React, { Component, useState } from "react";
@@ -18,10 +20,15 @@ const App = () => {
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
+    config: config.molasses,
   });
 
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [displayDetailed, setDetailed] = useState(false);
+  const [title, setTitle] = useState("");
+  const [description2, setDescription2] = useState(<div></div>);
+  const [gitLink, setLink] = useState(<div></div>);
 
   const [
     { color, backgroundColor, paddingLeft, paddingRight, paddingBottom },
@@ -65,6 +72,8 @@ const App = () => {
   const leaveProject = (id) => {
     document.getElementById(id).style.color = "#000";
     document.getElementById(id).style.background = "#fff";
+    setDescription("");
+    setImage("");
   };
 
   const hoverProject = (id) => {
@@ -282,158 +291,326 @@ const App = () => {
   };
 
   const displayProjects = () => {
-    console.log("projects");
-    return (
-      <animated.div style={fadeIn}>
-        <animated.div className="projectContainer" style={fadeIn}>
-          <div className="content">
-            <animated.h1
-              id="myAlbumList"
-              className="projectListing"
-              onMouseEnter={() => {
-                hoverProject("myAlbumList");
-              }}
-              onMouseLeave={() => {
-                leaveProject("myAlbumList");
-              }}
-            >
-              MyAlbumList
-            </animated.h1>
-            <animated.h1
-              id="redditWorldCup"
-              className="projectListing"
-              title="Click for more info about this project."
-              onMouseEnter={() => {
-                hoverProject("redditWorldCup");
-                setDescription(
-                  "A React web app which allows users to compare Reddit image posts in a bracket-style format."
-                );
-                setImage(
-                  "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
-                );
-              }}
-              onMouseLeave={() => {
-                leaveProject("redditWorldCup");
-                setDescription("");
-                setImage("");
-              }}
-            >
-              Reddit World Cup
-            </animated.h1>
-            <animated.h1
-              id="personalSite"
-              className="projectListing"
-              title="Click for more info about this project."
-              onMouseEnter={() => {
-                hoverProject("personalSite");
-                setDescription(
-                  "My personal site for showcasing my projects. You are using it right now."
-                );
-                setImage(
-                  "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
-                );
-              }}
-              onMouseLeave={() => {
-                leaveProject("personalSite");
-                setDescription("");
-                setImage("");
-              }}
-            >
-              Personal Website
-            </animated.h1>
-            <animated.h1
-              id="safeFoods"
-              className="projectListing"
-              title="Click for more info about this project."
-              onMouseEnter={() => {
-                hoverProject("safeFoods");
-                setDescription(
-                  "A Java swing app which lists the health violation and inspection history for LA restaurants. Made in collaboration with Mike Li, Dipendra Subedi, and Sanjula Ganepola."
-                );
-                setImage("images/safefoods.png");
-              }}
-              onMouseLeave={() => {
-                leaveProject("safeFoods");
-                setDescription("");
-                setImage("");
-              }}
-            >
-              SafeFoods
-            </animated.h1>
-            <animated.h1
-              id="fibFractals"
-              className="projectListing"
-              title="Click for more info about this project."
-              onMouseEnter={() => {
-                hoverProject("fibFractals");
-                setDescription(
-                  "A C program which generates Fibonacci fractals from an inputted Fibonacci word."
-                );
-                setImage(
-                  "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
-                );
-              }}
-              onMouseLeave={() => {
-                leaveProject("fibFractals");
-                setDescription("");
-                setImage("");
-              }}
-            >
-              Fibonacci Word Fractals
-            </animated.h1>
-            <animated.h1
-              id="trafficAlarm"
-              className="projectListing"
-              title="Click for more info about this project."
-              onMouseEnter={() => {
-                hoverProject("trafficAlarm");
-                setDescription(
-                  "An Android alarm clock app which changes the alarm based on the traffic of the surrounding area. Made in collaboration with Alvin Chan and Anson Wan."
-                );
-                setImage(
-                  "http://5b0988e595225.cdn.sohucs.com/images/20180906/ac2ca14b0ee24ba1834430e25a384ae7.gif"
-                );
-              }}
-              onMouseLeave={() => {
-                leaveProject("trafficAlarm");
-                setDescription("");
-                setImage("");
-              }}
-            >
-              Traffic Alarm
-            </animated.h1>
+    if (displayDetailed === false)
+      return (
+        <animated.div style={fadeIn}>
+          <animated.div
+            id="projectList"
+            className="projectContainer"
+            style={fadeIn}
+          >
+            <div className="content">
+              <animated.h1
+                id="myAlbumList"
+                className="projectListing"
+                onMouseEnter={() => {
+                  hoverProject("myAlbumList");
+                }}
+                onMouseLeave={() => {
+                  leaveProject("myAlbumList");
+                }}
+              >
+                MyAlbumList
+              </animated.h1>
+              <animated.h1
+                id="redditWorldCup"
+                className="projectListing"
+                title="Click for more info about this project."
+                onMouseEnter={() => {
+                  hoverProject("redditWorldCup");
+                  setDescription(
+                    "A front-end React web app which allows users to compare Reddit image posts in a bracket-style format."
+                  );
+                  setImage("/videos/redditworldcup.gif");
+                }}
+                onMouseLeave={() => {
+                  leaveProject("redditWorldCup");
+                }}
+                onClick={() => {
+                  setTitle("Reddit World Cup");
+                  setDetailed(true);
+                  setDescription2(
+                    <div>
+                      <animated.p style={fadeIn} className="projectDescription">
+                        {description}
+                        <br></br>
+                        <br></br>
+                        Technologies Used : Javascript, React, HTML, CSS,
+                        Bootstrap, ECMAScript, Reddit API, Firebase,
+                        asynchronous programming
+                        <br></br>
+                        <br></br>
+                        What I Did/Accomplished: I created my first 'real' web
+                        app using React, and made it responsive and visually
+                        pleasing. I also used asynchronous programming to create
+                        an algorithm which fetches image posts from Reddit, and
+                        gained experience with RESTFul APIs.
+                      </animated.p>
+                    </div>
+                  );
+                  setLink("https://github.com/JasperLeungGit/RedditWorldCup");
+                }}
+              >
+                Reddit World Cup
+              </animated.h1>
+              <animated.h1
+                id="personalSite"
+                className="projectListing"
+                title="Click for more info about this project."
+                onMouseEnter={() => {
+                  hoverProject("personalSite");
+                  setDescription(
+                    "My personal site for showcasing my projects. You are using it right now."
+                  );
+                  setImage("/videos/personalsite.gif");
+                }}
+                onMouseLeave={() => {
+                  leaveProject("personalSite");
+                }}
+                onClick={() => {
+                  setTitle("Personal Site");
+                  setDetailed(true);
+                  setDescription2(
+                    <div>
+                      <animated.p style={fadeIn} className="projectDescription">
+                        {description}
+                        <br></br>
+                        <br></br>
+                        Technologies Used : Javascript, React, react-spring,
+                        HTML, CSS, Firebase,
+                        <br></br>
+                        <br></br>
+                        What I Did/Accomplished: I created a website with a
+                        focus on aesthetics/responsiveness in order to improve
+                        my skills in those areas. I also worked with the
+                        react-spring animations library for the first time, and
+                        learned how to perform basic animations with it.
+                      </animated.p>
+                    </div>
+                  );
+                  setLink("https://github.com/JasperLeungGit/personalsite");
+                }}
+              >
+                Personal Website
+              </animated.h1>
+              <animated.h1
+                id="safeFoods"
+                className="projectListing"
+                title="Click for more info about this project."
+                onMouseEnter={() => {
+                  hoverProject("safeFoods");
+                  setDescription(
+                    "A Java swing app which lists the health violation and inspection history for LA restaurants, and gives them scores based on their safety. Implements various sorting, searching, and graph algorithms.  Made in collaboration with Mike Li, Dipendra Subedi, and Sanjula Ganepola for the SFWRENG 2XB3 Course."
+                  );
+                  setImage("images/safefoods.png");
+                }}
+                onMouseLeave={() => {
+                  leaveProject("safeFoods");
+                }}
+                onClick={() => {
+                  setTitle("Personal Site");
+                  setDetailed(true);
+                  setDescription2(
+                    <div>
+                      <animated.p style={fadeIn} className="projectDescription">
+                        {description}
+                        <br></br>
+                        <br></br>
+                        Technologies Used : Java, Swing
+                        <br></br>
+                        <br></br>
+                        What I Did/Accomplished: I created a modified version of
+                        the binary search algorithm in Java so I could search
+                        through a dataset containing the health and inspection
+                        histories for restaurants in LA. We received a grade of
+                        90 for this project.
+                      </animated.p>
+                    </div>
+                  );
+                  setLink("https://github.com/JasperLeungGit/SafeFoods");
+                }}
+              >
+                SafeFoods
+              </animated.h1>
+              <animated.h1
+                id="fibFractals"
+                className="projectListing"
+                title="Click for more info about this project."
+                onMouseEnter={() => {
+                  hoverProject("fibFractals");
+                  setDescription(
+                    "A C program which generates Fibonacci fractals from an inputted Fibonacci word."
+                  );
+                  setImage("images/fib25.jpg");
+                }}
+                onMouseLeave={() => {
+                  leaveProject("fibFractals");
+                }}
+                onClick={() => {
+                  setTitle("Fibbonaci Word Fractals");
+                  setDetailed(true);
+                  setDescription2(
+                    <div>
+                      <animated.p style={fadeIn} className="projectDescription">
+                        {description}
+                        <br></br>
+                        <br></br>
+                        Technologies Used : C<br></br>
+                        <br></br>
+                        What I Did/Accomplished: Created an optimized algorithm
+                        in C which generated fractals for up to the 30th
+                        Fibonacci Word.
+                      </animated.p>
+                    </div>
+                  );
+                  setLink(
+                    "https://github.com/JasperLeungGit/Fibonacci-Word-Fractals"
+                  );
+                }}
+              >
+                Fibonacci Word Fractals
+              </animated.h1>
+              <animated.h1
+                id="trafficAlarm"
+                className="projectListing"
+                title="Click for more info about this project."
+                onMouseEnter={() => {
+                  hoverProject("trafficAlarm");
+                  setDescription(
+                    "An Android alarm clock app which changes the alarm based on the traffic of the surrounding area. Made in collaboration with Alvin Chan and Anson Wan during the THacks2 hackathon."
+                  );
+                  setImage("/images/trafficalarm.png");
+                }}
+                onMouseLeave={() => {
+                  leaveProject("trafficAlarm");
+                }}
+                onClick={() => {
+                  setTitle("Traffic Alarm");
+                  setDetailed(true);
+                  setDescription2(
+                    <div>
+                      <animated.p style={fadeIn} className="projectDescription">
+                        {description}
+                        <br></br>
+                        <br></br>
+                        Technologies Used : Java, Android Studio, Google Maps
+                        API<br></br>
+                        <br></br>
+                        What I Did/Accomplished: Worked with Anson to create an
+                        alarm clock Android app with a working GUI, and helped
+                        create the algorithm which set the time for the alarm
+                        based on the traffic data collected from the Google Maps
+                        API.
+                      </animated.p>
+                    </div>
+                  );
+                  setLink("https://github.com/JasperLeungGit/TrafficAlarm");
+                }}
+              >
+                Traffic Alarm
+              </animated.h1>
 
+              <animated.h1
+                id="boonk"
+                className="projectListing"
+                title="Click for more info about this project."
+                onMouseEnter={() => {
+                  hoverProject("boonk");
+                  setDescription(
+                    "A Unity fighting game. The best thing I will ever make."
+                  );
+                  setImage("/videos/boonk.gif");
+                }}
+                onMouseLeave={() => {
+                  leaveProject("boonk");
+                }}
+                onClick={() => {
+                  setTitle("Boonk");
+                  setDetailed(true);
+                  setDescription2(
+                    <div>
+                      <animated.p style={fadeIn} className="projectDescription">
+                        {description}
+                        <br></br>
+                        <br></br>
+                        Technologies Used : Unity, C#, Maya
+                        <br></br>
+                        <br></br>
+                        What I Did/Accomplished: I used C# to write scripts for
+                        the models in the game, and modified the existing Unity
+                        physics engine. Also, I created all of the models for
+                        the game myself in Maya. and used Unity to put
+                        everything together. Creating this game helped me
+                        achieve my childhood dream of making a video game by
+                        myself d:).
+                      </animated.p>
+                    </div>
+                  );
+                  setLink("https://github.com/JasperLeungGit/Boonk");
+                }}
+              >
+                Boonk
+              </animated.h1>
+            </div>
+          </animated.div>
+          <animated.div
+            id="projectPreview"
+            className="projectPreview"
+            style={fadeIn}
+          >
+            <h1 className="projectDescriptionShort">{description}</h1>
+            <img className="previewImage" src={image}></img>
+          </animated.div>
+        </animated.div>
+      );
+    else
+      return (
+        <animated.div style={fadeIn} id="projectDescription">
+          <animated.h1
+            id="back"
+            style={fadeIn}
+            className="back"
+            onMouseEnter={() => {
+              hover("back");
+            }}
+            onMouseLeave={() => {
+              leave("back");
+            }}
+            onClick={() => {
+              console.log("clicked");
+              setDetailed(false);
+            }}
+          >
+            Back to Projects
+          </animated.h1>
+          <animated.h1 style={fadeIn} className="projectHeader">
+            {title}
+          </animated.h1>
+          <animated.h1 style={fadeIn} className="projectDescription">
+            {description2}
+          </animated.h1>
+          <img
+            className="image1"
+            src={image}
+            title="Click to expand image"
+          ></img>
+          <a href={gitLink} target="_blank">
             <animated.h1
-              id="boonk"
-              className="projectListing"
-              title="Click for more info about this project."
+              id="gitLink"
+              style={fadeIn}
+              className="gitLink"
               onMouseEnter={() => {
-                hoverProject("boonk");
-                setDescription(
-                  "A Unity fighting game. The best thing I will ever make."
-                );
-                setImage("/videos/boonk.gif");
+                hoverProject("gitLink");
               }}
               onMouseLeave={() => {
-                leaveProject("boonk");
-                setDescription("");
-                setImage("");
+                hover("gitLink");
               }}
             >
-              Boonk
+              View this project on GitHub
             </animated.h1>
-          </div>
+          </a>
         </animated.div>
-        <animated.div
-          id="projectPreview"
-          className="projectPreview"
-          style={fadeIn}
-        >
-          <h1 className="projectDescriptionShort">{description}</h1>
-          <img className="previewImage" src={image}></img>
-        </animated.div>
-      </animated.div>
-    );
+      );
   };
 
   const display = () => {
@@ -480,6 +657,10 @@ const App = () => {
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto"
+      ></link>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Raleway"
       ></link>
       {display()}
     </div>
