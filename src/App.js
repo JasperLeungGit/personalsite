@@ -338,7 +338,8 @@ const App = () => {
                   setDescription2(
                     <div>
                       <animated.p style={fadeIn} className="projectDescription">
-                        {description}
+                        A front-end React web app which allows users to compare
+                        Reddit image posts in a bracket-style format.
                         <br></br>
                         <br></br>
                         Technologies Used : Javascript, React, HTML, CSS,
@@ -380,7 +381,8 @@ const App = () => {
                   setDescription2(
                     <div>
                       <animated.p style={fadeIn} className="projectDescription">
-                        {description}
+                        My personal site for showcasing my projects. You are
+                        using it right now.
                         <br></br>
                         <br></br>
                         Technologies Used : Javascript, React, react-spring,
@@ -421,7 +423,12 @@ const App = () => {
                   setDescription2(
                     <div>
                       <animated.p style={fadeIn} className="projectDescription">
-                        {description}
+                        A Java swing app which lists the health violation and
+                        inspection history for LA restaurants, and gives them
+                        scores based on their safety. Implements various
+                        sorting, searching, and graph algorithms. Made in
+                        collaboration with Mike Li, Dipendra Subedi, and Sanjula
+                        Ganepola for the SFWRENG 2XB3 Course.
                         <br></br>
                         <br></br>
                         Technologies Used : Java, Swing
@@ -461,7 +468,8 @@ const App = () => {
                   setDescription2(
                     <div>
                       <animated.p style={fadeIn} className="projectDescription">
-                        {description}
+                        A C program which generates Fibonacci fractals from an
+                        inputted Fibonacci word.
                         <br></br>
                         <br></br>
                         Technologies Used : C<br></br>
@@ -500,7 +508,10 @@ const App = () => {
                   setDescription2(
                     <div>
                       <animated.p style={fadeIn} className="projectDescription">
-                        {description}
+                        An Android alarm clock app which changes the alarm based
+                        on the traffic of the surrounding area. Made in
+                        collaboration with Alvin Chan and Anson Wan during the
+                        THacks2 hackathon.
                         <br></br>
                         <br></br>
                         Technologies Used : Java, Android Studio, Google Maps
@@ -541,7 +552,7 @@ const App = () => {
                   setDescription2(
                     <div>
                       <animated.p style={fadeIn} className="projectDescription">
-                        {description}
+                        A Unity fighting game. The best thing I will ever make.
                         <br></br>
                         <br></br>
                         Technologies Used : Unity, C#, Maya
