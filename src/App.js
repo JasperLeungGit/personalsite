@@ -25,6 +25,7 @@ const App = () => {
 
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [video, setVideo] = useState("");
   const [displayDetailed, setDetailed] = useState(false);
   const [title, setTitle] = useState("");
   const [description2, setDescription2] = useState(<div></div>);
@@ -74,6 +75,7 @@ const App = () => {
     document.getElementById(id).style.background = "#fff";
     setDescription("");
     setImage("");
+    setVideo("");
   };
 
   const hoverProject = (id) => {
@@ -239,22 +241,25 @@ const App = () => {
         </h1>
         <p className="skills">
           <br></br>
-          Languages: Javascript, CSS, HTML, ECMAScript, Node.js, SQL, Java, C,
-          Python, C#, Bash, Arduino, NASM assembly language
+          Languages (Web): Javascript, CSS, HTML, ECMAScript, SQL
           <br></br>
           <br></br>
-          Technologies: Git, React, RESTful web services, SQL, Bootstrap,
-          Firebase, Heroku, Android Studio, Ubuntu, Linux, Photoshop
+          Technologies (Web): React, MongoDB, Mongoose, Node.js, Express,
+          Passport.js, REST APIS, JWT tokens, OAuth, Bootstrap, Git, Firebase,
+          Heroku
+          <br></br>
+          <br></br>
+          Languages (Misc.): Java, C, Python, C#, Bash, Arduino, NASM assembly
+          language
+          <br></br>
+          <br></br>
+          Technologies (Misc.): Android Studio, Ubuntu, Linux, Photoshop,
+          AutoCAD, Maya, Unity
         </p>
         <h1 className="educationHeader">Education</h1>
         <p className="education">
           <br></br>
           McMaster University – Software Engineering CO-OP – B.Eng. (2018-2023)
-        </p>
-        <h1 className="hobbiesHeader">Hobbies</h1>
-        <p className="hobbies">
-          <br></br>
-          Working on side projects, reading, playing video games, making music
         </p>
       </animated.div>
     );
@@ -308,14 +313,55 @@ const App = () => {
               <animated.h1
                 id="myAlbumList"
                 className="projectListing"
+                title="Click for more info about this project."
                 onMouseEnter={() => {
                   hoverProject("myAlbumList");
+                  setDescription(
+                    "A MERN full stack web application where users can creat a list of albums they've listened to and rate them."
+                  );
+                  setImage("/videos/myalbumlist.gif");
                 }}
                 onMouseLeave={() => {
                   leaveProject("myAlbumList");
                 }}
+                onClick={() => {
+                  setVideo(
+                    "https://www.youtube.com/embed/JQohXRN3OBg?controls=0"
+                  );
+                  setImage("");
+                  setTitle("My Album List");
+                  setDetailed(true);
+                  setDescription2(
+                    <div>
+                      <animated.p style={fadeIn} className="projectDescription">
+                        A MERN full stack web application where users can create
+                        a list of albums they've listened to, and give those
+                        albums ratings and reviews.
+                        <br></br>
+                        <br></br>
+                        Technologies Used : Javascript, React, HTML, CSS,
+                        Bootstrap, Itunes API, MongoDB, Mongoose, Node.js,
+                        Express, Passport.js, Firebase
+                        <br></br>
+                        <br></br>
+                        What I Did/Accomplished: Music tastes is always a topic
+                        of discussion for my friends and I, so I wanted to make
+                        an app which let us do that easily. I created a React
+                        app which communicated with the backend code to provide
+                        user authentication and allow users to edit their list.
+                        I also used Bootstrap and the Itunes API to create a
+                        responsive and user-friendly album list. Within the
+                        backend, I created routes which would handle calls from
+                        the frontend and return data from the MongoDB database.
+                        Also generated JWT Tokens to provide user
+                        authentication.
+                      </animated.p>
+                    </div>
+                  );
+                  setLink("https://github.com/JasperLeungGit/MyAlbumList");
+                }}
               >
-                MyAlbumList
+                My Album List
               </animated.h1>
               <animated.h1
                 id="redditWorldCup"
@@ -355,7 +401,7 @@ const App = () => {
                       </animated.p>
                     </div>
                   );
-                  setLink("https://github.com/JasperLeungGit/RedditWorldCup");
+                  setLink("https://github.com/JasperLeungGit/MyAlbumList");
                 }}
               >
                 Reddit World Cup
@@ -582,6 +628,7 @@ const App = () => {
           >
             <h1 className="projectDescriptionShort">{description}</h1>
             <img className="previewImage" src={image}></img>
+            if (!)
           </animated.div>
         </animated.div>
       );
@@ -612,11 +659,8 @@ const App = () => {
           <animated.h1 style={fadeIn} className="projectDescription">
             {description2}
           </animated.h1>
-          <img
-            className="image1"
-            src={image}
-            title="Click to expand image"
-          ></img>
+          <iframe className="video" src={video}></iframe>
+          <img className="image1" src={image}></img>
           <a href={gitLink} target="_blank">
             <animated.h1
               id="gitLink"

@@ -58,7 +58,7 @@
   color: white;
   font-family: "Roboto", serif;
   font-size: 2vw;
-  left: 69%;
+  left: 63%;
 }
 
 .aboutHeader {
@@ -125,29 +125,6 @@
   color: white;
   left: 3%;
   top: 25%;
-  width: 90%;
-  font-family: "Roboto", serif;
-  font-size: 1.5vh;
-}
-
-.hobbiesHeader {
-  border: none;
-  background-color: white;
-  position: absolute;
-  color: black;
-  padding: 0.5%;
-  font-family: "Roboto", serif;
-  font-size: 3.5vh;
-  left: 3%;
-  top: 57%;
-}
-
-.hobbies {
-  background-color: black;
-  position: absolute;
-  color: white;
-  left: 3%;
-  top: 63%;
   width: 90%;
   font-family: "Roboto", serif;
   font-size: 1.5vh;
@@ -260,6 +237,14 @@
   top: 20%;
   max-width: 40%;
   max-height: 35%;
+}
+
+iframe {
+  position: absolute;
+  left: 60%;
+  top: 20%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .gitLink {
